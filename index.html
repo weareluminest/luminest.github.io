@@ -44,4 +44,73 @@
       margin-top: 3rem;
     }
 
-    /
+    /* New styles for cards */
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 2rem auto;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      flex: 1 1 250px; /* flexible width, min 250px */
+      max-width: 300px;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #e68a00;
+    }
+    .card p {
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>LumiNest</h1>
+    <p>Your wellbeing & early childhood development studio</p>
+  </header>
+
+  <section>
+    <h2>Welcome to LumiNest</h2>
+    <p>Creating digital experiences and educational games for children aged 2–6.</p>
+    <ul>
+      <li>Fun and educational content</li>
+      <li>Interactive games</li>
+      <li>Safe and nurturing environment</li>
+    </ul>
+  </section>
+
+  <!-- New cards section -->
+  <section>
+    <h2>Our Features</h2>
+    <div class="cards-container">
+      <div class="card">
+        <h3>Interactive Games</h3>
+        <p>Engage children with fun and educational digital games designed for early development.</p>
+      </div>
+      <div class="card">
+        <h3>Safe Environment</h3>
+        <p>We prioritize safety and nurturing experiences for children and families.</p>
+      </div>
+      <div class="card">
+        <h3>Expert Guidance</h3>
+        <p>Our content is created by early childhood development specialists.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 LumiNest. All rights reserved.
+  </footer>
+</body>
+</html>
