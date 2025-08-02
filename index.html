@@ -8,282 +8,191 @@
     @import url('https://fonts.googleapis.com/css2?family=Chewy&family=Roboto+Condensed&display=swap');
 
     :root {
-      --green: #8D9C75;
-      --background: #FFFDEF;
-      --event1: #FFF3B0;
-      --event2: #FFE4E1;
-      --event3: #D8E1FF;
+      --primary1: #CBAACB;
+      --primary2: #8D9C75; /* verde */
+      --primary3: #CFB48A;
+      --highlight: #8D9C75; /* verde para títulos e botão */
+      --secondary1: #FFF3B0;
+      --secondary2: #FFE4E1;
+      --secondary3: #D8E1FF;
+      --text-color: #333;
     }
-
-    /* Reset and base */
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-
     body {
-      margin: 0 65px 0 65px;
+      margin-left: 65px;
+      margin-right: 65px;
+      box-sizing: border-box;
       font-family: 'Roboto Condensed', sans-serif;
-      background: var(--background);
-      color: #333;
+      background: #FFFDEF;
+      color: var(--text-color);
       line-height: 1.6;
     }
-
-    a {
-      text-decoration: none;
+    h1, h2, h3, h4 {
+      font-family: 'Roboto Condensed', sans-serif;
+      color: var(--highlight);
+      margin-bottom: 0.3rem;
     }
-
-    /* Header */
+    .chewy-title {
+      font-family: 'Chewy', cursive;
+      color: var(--highlight);
+      margin-bottom: 0.3rem;
+    }
+    p, ul, label, input, textarea, button {
+      font-family: Helvetica, sans-serif;
+      color: var(--text-color);
+    }
     header {
       text-align: center;
-      padding: 50px 1rem 2rem 1rem;
-      max-width: 1000px;
+      padding: 2rem 1rem;
       margin: auto;
+      max-width: 1000px;
     }
-
     header img.logo {
       max-width: 150px;
-      margin-bottom: 1rem;
+      margin: 50px auto 1rem auto;
+      display: block;
     }
-
     header p {
       font-size: 1.2rem;
       margin: 0;
       line-height: 1.2;
     }
-
-    header p + p {
-      font-size: 1rem;
-      margin-top: 0;
-      color: #333;
+    /* Remove extra margin here */
+    header p.extra-space {
+      margin-bottom: 0;
     }
-
-    /* Intro text */
-    .intro-text {
-      max-width: 800px;
-      margin: 0 auto 3rem auto;
-      font-size: 1.2rem;
-      line-height: 1.5;
+    .cta {
+      margin-top: 32px;
       text-align: center;
-      padding: 0 10px;
     }
-
-    .intro-text .highlight-green {
-      font-family: 'Chewy', cursive;
-      color: var(--green);
-      font-weight: normal;
-      font-size: 1.4rem;
-      vertical-align: middle;
-    }
-
-    /* Launch app section */
-    .launching-app-section {
-      max-width: 700px;
-      margin: 2rem auto 3rem auto;
-      text-align: center;
-      padding: 0 10px;
-    }
-
-    .launching-app-text {
+    .cta p {
+      margin: 0 0 0.5rem 0;
+      font-weight: 600;
       font-family: 'Roboto Condensed', sans-serif;
-      font-size: 1.2rem;
-      color: #333;
-      margin-bottom: 1rem;
+      color: var(--text-color);
     }
-
-    .launch-button {
-      font-family: 'Chewy', cursive;
-      background: var(--green);
+    .cta a {
+      background: var(--highlight);
       color: white;
       padding: 1rem 2rem;
       border-radius: 1rem;
+      text-decoration: none;
+      font-family: 'Chewy', cursive;
       font-size: 1.3rem;
       display: inline-block;
-      cursor: pointer;
-      border: none;
     }
-
-    .launch-button:hover,
-    .launch-button:focus {
-      background-color: #7c865f;
-      outline: none;
+    section {
+      padding: 2rem 1.5rem;
+      max-width: 1000px;
+      margin: auto;
     }
-
-    /* Events */
-    .events-list {
-      text-align: center;
+    .intro-section {
       margin-bottom: 3rem;
-      max-width: 900px;
+      max-width: 700px;
       margin-left: auto;
       margin-right: auto;
-      padding: 0 10px;
     }
-
-    .events-list h2 {
-      font-family: 'Roboto Condensed', sans-serif;
-      color: #333;
-      margin-bottom: 1rem;
+    .intro-section p {
+      margin-top: 0.25rem;
+      margin-bottom: 1.2rem;
     }
-
-    .events-list ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
-      max-width: 800px;
-      justify-items: center;
-    }
-
-    .events-list li {
-      border-radius: 1rem;
-      padding: 1rem 1.5rem;
-      font-size: 1.1rem;
-      color: #333;
-      max-width: 180px;
-      font-weight: 600;
-      box-sizing: border-box;
-      box-shadow: 0 0 5px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease;
-      cursor: default;
-    }
-    .events-list li:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    }
-
-    .events-list li:nth-child(3n+1) {
-      background-color: var(--event1);
-    }
-
-    .events-list li:nth-child(3n+2) {
-      background-color: var(--event2);
-    }
-
-    .events-list li:nth-child(3n+3) {
-      background-color: var(--event3);
-    }
-
-    /* Contact Us */
-    .contact {
+    .events-list {
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
       text-align: center;
-      max-width: 400px;
-      margin: 0 auto 3rem auto;
-      padding: 0 10px;
     }
-
-    .contact h2 {
-      font-family: 'Roboto Condensed', sans-serif;
-      color: #333;
+    .events-list h2 {
+      color: var(--highlight);
+      font-weight: normal;
       margin-bottom: 1rem;
     }
-
-    .social-icons {
+    .events-list ul {
+      list-style-type: none;
+      padding: 0;
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      margin-top: 1rem;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
-
-    .social-icons a img {
-      width: 32px;
-      height: 32px;
-      vertical-align: middle;
-      filter: grayscale(0);
-      transition: filter 0.2s ease;
-    }
-
-    .social-icons a:hover img,
-    .social-icons a:focus img {
-      filter: grayscale(0.5);
-      outline: none;
-    }
-
-    /* Newsletter */
-    .newsletter {
-      max-width: 600px;
-      margin: 0 auto 3rem auto;
-      padding: 0 10px;
-    }
-
-    .newsletter h2 {
+    .events-list li {
+      background: var(--secondary1);
+      padding: 0.8rem 1rem;
+      border-radius: 1rem;
+      min-width: 130px;
+      max-width: 180px;
+      font-size: 0.9rem;
+      box-sizing: border-box;
       text-align: center;
-      font-family: 'Roboto Condensed', sans-serif;
-      margin-bottom: 1rem;
+      color: var(--text-color);
+      box-shadow: 0 0 6px rgb(0 0 0 / 0.1);
+      flex-shrink: 0;
+      transition: background 0.3s ease;
+      cursor: default;
     }
-
+    .events-list li:nth-child(2) {
+      background: var(--secondary2);
+    }
+    .events-list li:nth-child(3) {
+      background: var(--secondary3);
+    }
+    .contact {
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      font-size: 1.1rem;
+      color: var(--highlight);
+    }
+    .contact a {
+      color: var(--highlight);
+      text-decoration: none;
+    }
+    .newsletter {
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    .newsletter h2 {
+      color: var(--highlight);
+      font-weight: normal;
+      margin-bottom: 0.8rem;
+    }
     .newsletter form {
       display: flex;
       gap: 0.5rem;
       justify-content: center;
       align-items: center;
     }
-
     .newsletter input[type="email"] {
       flex-grow: 1;
-      padding: 0.75rem 1rem;
+      padding: 0.75rem;
       font-size: 1rem;
       border: 1px solid #ccc;
-      border-radius: 1rem;
-      font-family: 'Roboto Condensed', sans-serif;
-      min-width: 0;
+      border-radius: 0.5rem;
+      font-family: Helvetica, sans-serif;
+      max-width: 400px;
     }
-
-    .newsletter button[type="submit"] {
-      background: var(--green);
-      color: white;
+    .newsletter button {
+      background: var(--highlight);
+      color: #fff;
       border: none;
       cursor: pointer;
-      padding: 0.75rem 2rem;
+      padding: 0.5rem 1.5rem;
       border-radius: 1rem;
       font-family: 'Chewy', cursive;
       font-size: 1.1rem;
-      transition: background-color 0.3s ease;
     }
-
-    .newsletter button[type="submit"]:hover,
-    .newsletter button[type="submit"]:focus {
-      background-color: #7c865f;
-      outline: none;
-    }
-
-    /* Footer */
     footer {
-      background: var(--background);
+      background: var(--secondary3);
       text-align: center;
       padding: 2rem 1rem;
       font-size: 0.9rem;
       color: #666;
       margin-top: 3rem;
     }
-
-    footer a {
-      color: var(--green);
-      text-decoration: none;
-      margin: 0 0.5rem;
-    }
-
-    footer a:hover,
-    footer a:focus {
-      text-decoration: underline;
-      outline: none;
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      .events-list ul {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      }
-      .newsletter form {
-        flex-direction: column;
-        gap: 0.75rem;
-      }
-      .newsletter button[type="submit"] {
-        width: 100%;
-        padding: 1rem 0;
-      }
-    }
-
   </style>
 </head>
 <body>
@@ -291,22 +200,29 @@
   <header>
     <img class="logo" src="https://img1.wsimg.com/isteam/ip/d97c1e45-b522-4f18-a8fe-dfba5028c947/Group%2088.png" alt="LumiNest Logo" />
     <p>Your wellbeing & early childhood development studio</p>
-    <p>A women-led initiative supporting families with autistic children</p>
+    <p class="extra-space">A women-led initiative supporting families with autistic children</p>
   </header>
 
-  <section class="intro-text" aria-label="Introductory text">
-    <p>
-      <span class="highlight-green">For Parents First</span> - LumiNest offers therapeutic, research-backed digital tools designed specifically for parents raising children between the ages of 2 and 6. We know the early years with an autistic child can feel overwhelming and beautiful at once. For that reason,<br>
-      <span class="highlight-green">our mission</span> is to empower, guide, and comfort families through accessible digital experiences — supporting neurodiversity with love, care, and science.
-    </p>
+  <section class="intro-section">
+    <h2>Who We Are</h2>
+    <p>LumiNest is a women-led studio that supports families with young children, especially those with autism.</p>
+
+    <h2>Parents First</h2>
+    <p>We understand the early years can be both hard and beautiful. That’s why we create easy-to-use digital tools for parents of children aged 2 to 6.</p>
+
+    <h2>our mission</h2>
+    <p>We want to help families feel confident and cared for by offering helpful and loving digital experiences.</p>
+
+    <h2>What We Offer</h2>
+    <p>Our app has fun activities and resources designed to support children’s growth and family wellbeing.</p>
   </section>
 
-  <section class="launching-app-section" aria-label="App launch announcement">
-    <p class="launching-app-text">We are excited to announce the launch of our app!</p>
-    <a href="#" class="launch-button" role="button" tabindex="0">Download Now!</a>
+  <section class="cta">
+    <p>All of these in our exclusive app, download it now!</p>
+    <a href="#">Download Now!</a>
   </section>
 
-  <section class="events-list" aria-label="Upcoming events">
+  <section class="events-list">
     <h2>Events</h2>
     <ul>
       <li>Webinar: Sensory Play at Home – Sept 5</li>
@@ -315,32 +231,22 @@
     </ul>
   </section>
 
-  <section class="newsletter" aria-label="Newsletter signup">
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:contact@weareluminest.co.uk">contact@weareluminest.co.uk</a></p>
+  </section>
+
+  <section class="newsletter">
     <h2>Join Our Newsletter</h2>
     <form>
-      <input type="email" name="newsletter" placeholder="Your email" aria-label="Email address" required />
+      <input type="email" name="newsletter" placeholder="Your email" required />
       <button type="submit">Subscribe</button>
     </form>
   </section>
 
-  <section class="contact" aria-label="Contact information">
-    <h2>Contact Us</h2>
-    <div class="social-icons">
-      <a href="mailto:contact@weareluminest.co.uk" aria-label="Email">
-        <img src="https://cdn-icons-png.flaticon.com/512/2549/2549872.png" alt="Email icon" />
-      </a>
-      <a href="https://instagram.com/weareluminest" target="_blank" rel="noopener" aria-label="Instagram">
-        <img src="https://cdn-icons-png.flaticon.com/512/1567/1567891.png" alt="Instagram icon" />
-      </a>
-      <a href="https://linkedin.com/company/weareluminest" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn icon" />
-      </a>
-    </div>
-  </section>
-
   <footer>
     &copy; 2025 LumiNest. All rights reserved. Women-led. Therapeutically designed in the UK. <br />
-    <a href="#">Privacy Policy</a> | <a href="#">Terms</a> | Follow us on <a href="https://instagram.com/weareluminest" target="_blank" rel="noopener">Instagram</a> and <a href="https://linkedin.com/company/weareluminest" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="#">Privacy Policy</a> | <a href="#">Terms</a>
   </footer>
 
 </body>
