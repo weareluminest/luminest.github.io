@@ -16,13 +16,14 @@
       --secondary2: #FFE4E1;
       --secondary3: #D8E1FF;
       --text-color: #333;
+      --background: #FFFDEF;
     }
     body {
       margin-left: 65px;
       margin-right: 65px;
       box-sizing: border-box;
       font-family: 'Roboto Condensed', sans-serif;
-      background: #FFFDEF;
+      background: var(--background);
       color: var(--text-color);
       line-height: 1.6;
     }
@@ -63,6 +64,7 @@
     .cta {
       margin-top: 32px;
       text-align: center;
+      margin-bottom: 1.5rem;
     }
     .cta p {
       margin: 0 0 0.5rem 0;
@@ -94,6 +96,10 @@
     .intro-section p {
       margin-top: 0.25rem;
       margin-bottom: 1.2rem;
+    }
+    /* Remove 50px space here */
+    .intro-section p.last-paragraph {
+      margin-bottom: 0.2rem;
     }
     .events-list {
       max-width: 700px;
@@ -186,12 +192,29 @@
       font-size: 1.1rem;
     }
     footer {
-      background: var(--secondary3);
+      background: var(--background);
       text-align: center;
       padding: 2rem 1rem;
       font-size: 0.9rem;
       color: #666;
       margin-top: 3rem;
+    }
+    footer a {
+      color: var(--highlight);
+      text-decoration: none;
+      margin: 0 0.3rem;
+    }
+    footer .social-icons {
+      margin-top: 0.5rem;
+    }
+    footer .social-icons a {
+      display: inline-block;
+      margin: 0 0.5rem;
+      vertical-align: middle;
+    }
+    footer .social-icons img {
+      width: 24px;
+      height: 24px;
     }
   </style>
 </head>
@@ -214,7 +237,7 @@
     <p>We want to help families feel confident and cared for by offering helpful and loving digital experiences.</p>
 
     <h2>What We Offer</h2>
-    <p>Our app has fun activities and resources designed to support children’s growth and family wellbeing.</p>
+    <p class="last-paragraph">Our app has fun activities and resources designed to support children’s growth and family wellbeing.</p>
   </section>
 
   <section class="cta">
@@ -247,6 +270,14 @@
   <footer>
     &copy; 2025 LumiNest. All rights reserved. Women-led. Therapeutically designed in the UK. <br />
     <a href="#">Privacy Policy</a> | <a href="#">Terms</a>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/company/weareluminest" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" />
+      </a>
+      <a href="https://instagram.com/weareluminest" target="_blank" rel="noopener" aria-label="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+      </a>
+    </div>
   </footer>
 
 </body>
