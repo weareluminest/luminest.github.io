@@ -9,79 +9,37 @@
       --primary1: #CBAACB;
       --primary2: #8D9C75;
       --primary3: #CFB48A;
+      --highlight: #CBAACB;
       --secondary1: #FFF3B0;
       --secondary2: #FFE4E1;
       --secondary3: #D8E1FF;
     }
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: var(--secondary2);
+      font-family: 'Roboto Condensed', sans-serif;
+      background: #FFFDEF;
       color: #333;
       line-height: 1.6;
     }
+    h1, h2, h3, h4 {
+      font-family: 'Roboto Condensed', sans-serif;
+    }
+    p, ul, label, input, textarea, button {
+      font-family: Helvetica, sans-serif;
+    }
     header {
-      background: var(--primary1);
-      padding: 2rem;
       text-align: center;
+      padding: 2rem 1rem;
+      margin: auto;
+      max-width: 1000px;
     }
     header h1 {
+      font-size: 3rem;
       margin: 0;
-      font-size: 2.8rem;
     }
     header p {
       font-size: 1.2rem;
-      margin-top: 0.5rem;
-    }
-    nav {
-      text-align: center;
-      margin-top: 1rem;
-    }
-    nav button {
-      background: var(--primary3);
-      border: none;
-      padding: 0.5rem 1rem;
-      margin: 0.2rem;
-      font-size: 1rem;
-      cursor: pointer;
-      border-radius: 6px;
-      color: #fff;
-    }
-    section {
-      padding: 3rem 1.5rem;
-      max-width: 880px;
-      margin: auto;
-    }
-    section h2 {
-      color: var(--primary2);
-      font-size: 1.8rem;
-    }
-    .card {
-      background: #fff;
-      border-radius: 1rem;
-      padding: 2rem;
-      margin: 1.5rem 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-    footer {
-      background: var(--secondary3);
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: #666;
-      margin-top: 3rem;
-    }
-    .cta {
-      text-align: center;
-      margin-top: 3rem;
-    }
-    .cta a {
-      background: var(--primary2);
-      color: white;
-      padding: 1rem 2rem;
-      border-radius: 1rem;
-      text-decoration: none;
-      font-size: 1.2rem;
+      margin: 0.5rem 0;
     }
     .language-toggle {
       position: fixed;
@@ -95,25 +53,85 @@
       border-radius: 0.5rem;
       cursor: pointer;
     }
-    input, textarea, button {
-      font-family: inherit;
+    section {
+      padding: 2rem 1.5rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .intro-section, .mission-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .intro-section img, .mission-section img {
+      max-width: 100%;
+      flex: 1 1 40%;
+      border-radius: 1rem;
+    }
+    .intro-text, .mission-text {
+      flex: 1 1 55%;
+    }
+    h2 {
+      color: var(--primary2);
+      margin-bottom: 0.5rem;
+    }
+    .events-list ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .form-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    input, textarea {
+      padding: 0.75rem;
       font-size: 1rem;
-      margin-top: 0.5rem;
-      width: 100%;
-      padding: 0.6rem;
-      border-radius: 0.5rem;
       border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      width: 100%;
+      max-width: 400px;
     }
     button[type="submit"] {
-      background: var(--primary2);
-      color: white;
+      background: var(--highlight);
+      color: #fff;
       border: none;
       cursor: pointer;
+      padding: 0.5rem 1.5rem;
+      border-radius: 1rem;
     }
-    ul {
-      padding-left: 1.2rem;
+    .cta {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .cta a {
+      background: var(--highlight);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 1rem;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+    footer {
+      background: var(--secondary3);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 3rem;
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="language-toggle">
@@ -124,60 +142,61 @@
     <h1>LumiNest</h1>
     <p>Your wellbeing & early childhood development studio</p>
     <p><em>A women-led initiative supporting families with autistic children</em></p>
+    <div class="cta">
+      <a href="#">🎉 Our App is Launching — Download Now</a>
+    </div>
   </header>
 
-  <section>
-    <div class="card">
+  <section class="intro-section">
+    <div class="intro-text">
       <h2>For Parents First</h2>
-      <p>We know the early years with an autistic child can feel overwhelming and beautiful at once. LumiNest offers therapeutic, research-backed digital tools designed specifically for parents raising children between the ages of 2 and 6. Our mission is to empower, guide, and comfort — every step of the way.</p>
+      <p>We know the early years with an autistic child can feel overwhelming and beautiful at once. LumiNest offers therapeutic, research-backed digital tools designed specifically for parents raising children between the ages of 2 and 6.</p>
     </div>
+    <img src="https://images.pexels.com/photos/6338775/pexels-photo-6338775.jpeg?_gl=1*16pfisy*_ga*NDQzNjA2NTkxLjE3NDcwNzE3MzA.*_ga_8JE65Q40S6*czE3NTQxMzM5NjkkbzMkZzEkdDE3NTQxMzQwMjIkajckbDAkaDA." alt="Mother and child talking">
+  </section>
 
-    <div class="card">
-      <h2>Why LumiNest?</h2>
-      <ul>
-        <li>Designed with love and science for early autism support</li>
-        <li>Gentle, interactive mini-games for children</li>
-        <li>Calm design, tested for sensory comfort</li>
-        <li>First women-led initiative of its kind in the UK</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Our Vision</h2>
-      <p>We’re more than a digital tool. LumiNest is a wellbeing studio, created with therapists, parents, and educators. We work to ensure that every child — and every parent — feels safe, seen, and supported.</p>
-    </div>
-
-    <div class="card">
-      <h2>Blog & Updates</h2>
-      <p>Coming soon: insights into our app design, autism research, therapeutic strategies, and parenting experiences. Join our journey!</p>
-    </div>
-
-    <div class="card">
-      <h2>Newsletter</h2>
-      <form>
-        <label for="email">Sign up for monthly updates:</label><br />
-        <input type="email" id="email" name="email" placeholder="Your email" required>
-        <button type="submit">Subscribe</button>
-      </form>
-    </div>
-
-    <div class="card">
-      <h2>Contact Us</h2>
-      <form>
-        <input type="text" name="name" placeholder="Your name" required><br />
-        <input type="email" name="email" placeholder="Your email" required><br />
-        <textarea name="message" placeholder="Your message" rows="4" required></textarea><br />
-        <button type="submit">Send</button>
-      </form>
-    </div>
-
-    <div class="cta">
-      <a href="#">Download Our App</a>
+  <section class="mission-section">
+    <img src="https://images.pexels.com/photos/8386182/pexels-photo-8386182.jpeg?_gl=1*wjri9x*_ga*NDQzNjA2NTkxLjE3NDcwNzE3MzA.*_ga_8JE65Q40S6*czE3NTQxMzM5NjkkbzMkZzEkdDE3NTQxMzQzMTEkajYwJGwwJGgw" alt="Autism support illustration">
+    <div class="mission-text">
+      <h2>Our Mission</h2>
+      <p>To empower, guide, and comfort families through accessible digital experiences — supporting neurodiversity with love, care, and science.</p>
     </div>
   </section>
 
+  <section class="events-list">
+    <h2>Events</h2>
+    <ul>
+      <li>Webinar: Sensory Play at Home – Sept 5</li>
+      <li>Workshop: Communication Strategies – Oct 12</li>
+      <li>Virtual Q&A with Therapists – Nov 9</li>
+    </ul>
+  </section>
+
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Your email" required>
+      <textarea name="message" rows="4" placeholder="Your message" required></textarea>
+      <div class="form-row">
+        <button type="submit">Send</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="newsletter">
+    <h2>Join Our Newsletter</h2>
+    <form>
+      <div class="form-row">
+        <input type="email" name="newsletter" placeholder="Your email" required>
+        <button type="submit">Subscribe</button>
+      </div>
+    </form>
+  </section>
+
   <footer>
-    &copy; 2025 LumiNest. All rights reserved. Women-led. Therapeutically designed in the UK.
+    &copy; 2025 LumiNest. All rights reserved. Women-led. Therapeutically designed in the UK. <br />
+    <a href="#">Privacy Policy</a> | <a href="#">Terms</a> | Follow us on <a href="#">Instagram</a> and <a href="#">LinkedIn</a>
   </footer>
 
   <script>
